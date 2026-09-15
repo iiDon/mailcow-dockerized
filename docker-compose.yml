@@ -455,12 +455,12 @@ services:
       labels:
         traefik.enable: "true"
         traefik.docker.network: coolify
-        traefik.http.routers.coding-mailcow.rule: "Host(`${MAILCOW_HOSTNAME}`)"
+        traefik.http.routers.coding-mailcow.rule: "Host(`mail.coding.sa`)"
         traefik.http.routers.coding-mailcow.entrypoints: https
         traefik.http.routers.coding-mailcow.tls: "true"
         traefik.http.routers.coding-mailcow.tls.certresolver: letsencrypt
         traefik.http.routers.coding-mailcow.service: coding-mailcow
-        traefik.http.services.coding-mailcow.loadbalancer.server.port: "${HTTP_PORT:-80}"
+        traefik.http.services.coding-mailcow.loadbalancer.server.port: "80"
       restart: always
       networks:
         mailcow-network:
