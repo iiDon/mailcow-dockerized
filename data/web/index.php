@@ -52,6 +52,7 @@ $custom_login = customize('get', 'custom_login');
 
 $template = 'user_index.twig';
 $template_data = [
+  'webmail_portal' => str_starts_with($host, 'mail.'),
   'oauth2_request' => @$_SESSION['oauth2_request'],
   'is_mobileconfig' => str_contains($_SESSION['index_query_string'], 'mobileconfig'),
   'login_delay' => @$_SESSION['ldelay'],
